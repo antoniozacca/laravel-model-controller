@@ -10,23 +10,23 @@
 </head>
 
 <body>
-    <ul>
-        @foreach ($Movies as $Movie)
-            <li>
-                <h3>Titolo</h3>{{ $Movie->title }} - {{ $Movie->original_title }}
-            </li>
-            <li>
-                <span>Nazionalità: </span>{{ $Movie->nationality }}
-            </li>
-            <li>
-                <span> Data di pubblicazione: </span>{{ $Movie->date }}
-            </li>
-            <li>
-                <span> Voto: </span>{{ $Movie->vote }}
-            </li>
-        @endforeach
-    </ul>
-
+    <h1 class="text-center">Film Disponibili</h1>
+    <div class="container mt-5">
+        <div class="row">
+            @foreach ($Movies as $Movie)
+                <div class="col-md-6 col-xs-12 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $Movie->title }} <small class="text-muted">({{ $Movie->original_title }})</small></h5>
+                            <p class="card-text"><strong>Nazionalità:</strong> {{ $Movie->nationality }}</p>
+                            <p class="card-text"><strong>Data di pubblicazione:</strong> {{ $Movie->date }}</p>
+                            <p class="card-text"><strong>Voto:</strong> {{ $Movie->vote }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 </body>
 
 </html>
